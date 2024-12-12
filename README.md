@@ -1,6 +1,4 @@
 # FeedBridge
-# Food Donation Platform
-
 ## Overview
 The **Food Donation Platform** is designed to connect restaurants and charities in Egypt, aiming to reduce food waste and support those in need. This application streamlines the process of managing food donations, ensuring efficient and transparent communication between donors and recipients.
 
@@ -21,7 +19,7 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/food-donation-platform.git
+   git clone https://github.com/FarahAkl/FeedBridge.git
    ```
 2. Install dependencies:
    ```bash
