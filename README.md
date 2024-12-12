@@ -18,11 +18,11 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 
 
 ## Team Members
-- **Farah Akl** Frontend Developer
-- **Youmna Elgzery** Flutter
-- **Mahmoud Reda** Backend Developer
-- **Mahmoud Sanad** Backend Developer
-- **Mohamed Haitham** UI/UX Designer
+- **Farah Akl :** Frontend Developer
+- **Youmna Elgzery :** Flutter
+- **Mahmoud Reda :** Backend Developer
+- **Mahmoud Sanad :** Backend Developer
+- **Mohamed Haitham :** UI/UX Designer
   
 ## Installation
 1. Clone the repository:
