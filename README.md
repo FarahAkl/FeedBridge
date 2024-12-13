@@ -23,6 +23,10 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 - **Mahmoud Reda :** Backend Developer
 - **Mahmoud Sanad :** Backend Developer
 - **Mohamed Haitham :** UI/UX Designer
+
+## Supervised By 
+
+- Eng / Leqaa Hani
   
 ## Installation
 1. Clone the repository:
