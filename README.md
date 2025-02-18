@@ -18,10 +18,10 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 
 
 ## Team Members
-- **Farah Hesham :** Frontend Developer
-- **Youmna Elgzery :** Flutter
-- **Mahmoud Reda :** Backend Developer
-- **Mahmoud Sanad :** Backend Developer
+- **[Farah Hesham](https://github.com/FarahAkl) :** Frontend Developer
+- **[Youmna Elgzery](https://github.com/youmnaabdelhamid1) :** Flutter
+- **[Mahmoud Reda](https://github.com/mahmoudreda4424) :** Backend Developer
+- **[Mahmoud Sanad](https://github.com/Mahmoudssanad) :** Backend Developer
 - **Mohamed Haitham :** UI/UX Designer
 
 ## Supervised By 
