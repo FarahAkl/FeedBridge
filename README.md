@@ -22,7 +22,7 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 - **[Youmna Elgzery](https://github.com/youmnaabdelhamid1) :** Flutter
 - **[Mahmoud Reda](https://github.com/mahmoudreda4424) :** Backend Developer
 - **[Mahmoud Sanad](https://github.com/Mahmoudssanad) :** Backend Developer
-- **Mohamed Haitham :** UI/UX Designer
+- **[Mohamed Haitham](https://www.behance.net/mohamedhitham2) :** UI/UX Designer
 
 ## Supervised By 
 
