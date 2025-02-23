@@ -19,6 +19,9 @@ li {
 }
 a {
   text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
 }
 header {
   display: flex;
@@ -32,19 +35,68 @@ header {
     align-items: center;
     justify-content: center;
     .logo-img {
-      width:65px;
+      width: 65px;
     }
     p {
       font-weight: 600;
       font-size: 1.2rem;
     }
   }
-  .header-icons{
+  .header-icons {
     display: flex;
     gap: 15px;
-    span{
+    :first-child {
+      color: var(--text-color);
+    }
+    span {
       font-size: 1.9rem;
     }
   }
 }
 
+.page {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  .sidebar {
+    padding: 50px 25px;
+    width: 150px;
+    color: var(--text-color);
+    li {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      &.active {
+        color: var(--main-color);
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        &:hover {
+          color: var(--hover-color);
+        }
+      }
+    }
+    .logout {
+      color: #ff3b30;
+      font-size: 1.2rem;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        bottom: 30px;
+      }
+    }
+  }
+  .content-page {
+    width: 500px;
+    background-color: var(--background-color);
+    flex: 1;
+  }
+}
