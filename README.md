@@ -27,16 +27,16 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 ## Supervised By 
 
 - Eng / Leqaa Hani
-  
+- Eng / Omnia Alaa
+
 ## Installation
-1. Clone the repository:
+
+Clone the repository:
+
    ```bash
    git clone https://github.com/FarahAkl/FeedBridge.git
    ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+
 
 ## Project Diagrams
 All project diagrams, including system architecture and workflows, are available [here](https://drive.google.com/drive/folders/1TWNhUg-o04Az9l5K5VQg8EfqfQ_7ZDqm?usp=drive_link).
