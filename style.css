@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 body {
@@ -21,6 +22,54 @@ a {
   text-decoration: none;
   &:visited {
     color: inherit;
+  }
+}
+.special-heading {
+  padding: 50px 40px;
+  h1 {
+    color: var(--main-color);
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 10px;
+      width: 90%;
+      background-color: #999;
+      border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border: #efefef 3px solid;
+      border-radius: 50%;
+      background-color: #999;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
   }
 }
 header {
@@ -59,7 +108,7 @@ header {
   min-height: calc(100vh - 80px);
   .sidebar {
     padding: 50px 25px;
-    width: 150px;
+    min-width: 150px;
     color: var(--text-color);
     li {
       font-size: 1.2rem;
