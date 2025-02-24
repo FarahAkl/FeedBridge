@@ -25,6 +25,7 @@ a {
   }
 }
 .special-heading {
+  display: block;
   padding: 50px 40px;
   h1 {
     color: var(--main-color);
@@ -147,5 +148,11 @@ header {
     width: 500px;
     background-color: var(--background-color);
     flex: 1;
+    > div.active{
+      display: block;
+    }
+    > div{
+      display: none;
+    }
   }
 }
