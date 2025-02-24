@@ -4,22 +4,21 @@ The **Food Donation Platform** is designed to connect restaurants and charities 
 
 ## Features
 - **Real-time Notifications:** Keep stakeholders informed.
-- **Data Insights:** View analytics on food donations and impacts.
-- **Multi-language Support:** Available in Arabic and English.
 - **Make-order:** The needer can choose any thing he want from available products.
 - **Reports:** Admin send reports to donors.
 - **Track donations:** the donors can track the donations.
 - **Delivery:** Delivery is available
 
 ## Technology Stack
-- **Frontend:** React.js, Tailwind CSS
+- **Frontend:** Vanilla JS
 - **Backend:** .net
 - **Mobile:** Flutter
+- **UI/UX:** Figma
 
 
 ## Team Members
 - **[Farah Hesham](https://github.com/FarahAkl) :** Frontend Developer
-- **[Youmna Elgzery](https://github.com/youmnaabdelhamid1) :** Flutter
+- **[Youmna Elgzery](https://github.com/youmnaabdelhamid1) :** Flutter Developer
 - **[Mahmoud Reda](https://github.com/mahmoudreda4424) :** Backend Developer
 - **[Mahmoud Sanad](https://github.com/Mahmoudssanad) :** Backend Developer
 - **[Mohamed Haitham](https://www.behance.net/mohamedhitham2) :** UI/UX Designer
