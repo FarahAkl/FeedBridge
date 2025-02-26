@@ -31,27 +31,102 @@ header {
   width: 100%;
   padding: 10px 50px;
   color: var(--main-color);
-  box-shadow:0 5px 5px #00000025;
+  box-shadow: 0 0 5px #00000025;
   .header-logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     font-size: 1.25rem;
-    font-weight:500;
+    font-weight: 500;
     .logo-img {
       width: 65px;
     }
   }
-  .page-items{
+  .page-items {
     display: flex;
     align-items: center;
     gap: 40px;
   }
-  .header-icons{
+  .header-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px #00000025;
+  padding: 20px 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  min-width: 400px;
+  .login-header {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    padding: 10px 0;
+  }
+  .login-img {
+    font-size: 250px;
+    color: var(--main-color);
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin: 10px 0;
+      input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        min-width: 230px;
+        background-color: #33c58d35;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+      }
+    }
+    .submit-btn{
+        width: 60%;
+        margin: 10px auto;
+        background-color: var(--main-color);
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+        padding: 5px;
+        color: #fff;
+        font-family: "IBM Plex Sans Arabic", serif;
+        border: none;
+        font-size: 1.2rem;
+    }
+    a{
+        text-align: center;
+        margin:10px 0 ;
+        color: var(--main-color);
+    }
   }
 }
