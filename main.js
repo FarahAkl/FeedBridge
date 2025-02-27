@@ -1,5 +1,6 @@
 const sidebar = document.querySelector(".sidebar ul");
 const pageContent = document.querySelector(".content-page");
+
 // Handling the page content
 const handlePageContent = (li) => {
   const allLI = sidebar.querySelectorAll("li");
@@ -19,3 +20,4 @@ const handlePageContent = (li) => {
 sidebar.querySelectorAll("li").forEach((li) => {
   li.addEventListener("click", (e) => handlePageContent(e.currentTarget));
 });
+
