@@ -70,7 +70,7 @@ header {
       width: 65px;
     }
   }
-  .mobile-icon{
+  .mobile-icon {
     display: none;
   }
   .page-items {
@@ -83,6 +83,63 @@ header {
     justify-content: center;
     align-items: center;
     gap: 10px;
+  }
+}
+.footer {
+  background-color: var(--main-color);
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 20px 0;
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 70px;
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      .footer-form {
+        position: relative;
+        input {
+          background-color: var(--background-color);
+          border-radius: 50px;
+          padding: 10px 20px;
+        }
+        button {
+          background-color: var(--background-color);
+          color: var(--text-color);
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top-left-radius: 50px;
+          border-bottom-left-radius: 50px;
+          position: absolute;
+          padding: 5px 20px;
+          border: none;
+          border-right: 1px solid var(--text-color);
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    .footer-social {
+      display: flex;
+      padding-top: 20px;
+      gap: 20px;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+  }
+  .copy-rights {
+    padding-top: 20px;
+    text-align: center;
   }
 }
 .container {
@@ -227,7 +284,7 @@ header {
         display: none;
       }
     }
-    .mobile-icon{
+    .mobile-icon {
       display: block;
     }
     .page-items {
@@ -240,7 +297,7 @@ header {
       width: 100%;
       transform: translateX(-50%);
       display: none;
-      &.active{
+      &.active {
         display: block;
       }
       li {
@@ -268,8 +325,26 @@ header {
     .login-form {
       div {
         gap: 0;
-        input{
+        input {
           min-width: 180px;
+        }
+      }
+    }
+  }
+  .footer {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      .footer-contact {
+        .footer-form {
+          input {
+            width: 100%;
+          }
+          button {
+            padding: 5px 10px;
+          }
         }
       }
     }
