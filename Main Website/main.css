@@ -327,14 +327,60 @@ header {
       align-items: center;
       width: 100%;
       gap: 20px;
-      img {
-        width: 200px;
-        border-radius: 35px;
-        -webkit-border-radius: 35px;
-        -moz-border-radius: 35px;
-        -ms-border-radius: 35px;
-        -o-border-radius: 35px;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 150px;
+          border-radius: 35px;
+          -webkit-border-radius: 35px;
+          -moz-border-radius: 35px;
+          -ms-border-radius: 35px;
+          -o-border-radius: 35px;
+        }
       }
+    }
+  }
+}
+.stats-section {
+  padding: 40px 0;
+  .stats-container {
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    .stats-card {
+      background-color: #d9d9d9;
+      min-width: 250px;
+      padding: 30px;
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      font-weight: 700;
+      span {
+        font-size: 2rem;
+        color: var(--text-color);
+      }
+      p {
+        color: var(--text-color);
+      }
+      .stats-num {
+        color: var(--main-color);
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+@media (max-width:991px) {
+  .stats-section{
+    .stats-container{
+      flex-direction: column;
+      
     }
   }
 }
