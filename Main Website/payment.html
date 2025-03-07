@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google fonts icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FeedBridge</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-logo">
+        <img src="imgs/logo.png" alt="logo" class="logo-img" />
+        <p>FeedBridge</p>
+      </div>
+      <span class="material-symbols-outlined mobile-icon"> menu </span>
+      <ul class="page-items">
+        <li><a href="index.html">الرئيسيه</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="#">تبرع</a></li>
+        <li><a href="#">عن الموقع</a></li>
+      </ul>
+      <div class="header-icons">
+        <span class="material-symbols-outlined"> shopping_cart </span>
+        <span class="material-symbols-outlined"> account_circle </span>
+        <a href="login.html">تسجيل الدخول</a>
+      </div>
+    </header>
+    <div class="payment-section">
+      <div class="payment-container">
+        <div class="img-container">
+          <img src="imgs/payment.svg" alt="payment" />
+        </div>
+        <div class="payment-form">
+          <div class="payment-header">
+            <h2>بـيانـــات الدفــــــع</h2>
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </div>
+
+          <form>
+            <div>
+              <label>رقــم البطاقــه</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label>اســم صاحب البطاقــه</label>
+              <input type="text" />
+            </div>
+            <div class="button-container">
+              <button class="cancel-btn btn">الغاء</button>
+              <button class="btn">تأكيد و دفع</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
