@@ -309,8 +309,19 @@ header {
 .partner-section {
   padding: 20px 0;
   background-color: #333;
-  /* background-image: url(imgs/partner\ background.png);
-  background-size: cover; */
+  background-image: url(imgs/partner\ background.jpg);
+  background-position:center;
+  background-size: cover;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000007b;
+  }
   .partner-container {
     display: flex;
     flex-direction: column;
@@ -318,6 +329,8 @@ header {
     align-items: center;
     gap: 20px;
     padding: 30px 100px;
+    position: relative;
+    z-index: 10;
     h2 {
       color: #fff;
       font-size: 2.8rem;
@@ -554,13 +567,13 @@ header {
           color: var(--text-color);
         }
       }
-      .button-container{
+      .button-container {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
         .btn {
-          width:100% ;
+          width: 100%;
         }
         .cancel-btn {
           background-color: #fff;
@@ -592,7 +605,7 @@ header {
     }
   }
 }
-@media (max-width:991px){
+@media (max-width: 991px) {
   .payment-section {
     .payment-container {
       flex-direction: column;
@@ -604,14 +617,14 @@ header {
       .payment-form {
         padding: 20px;
         min-width: 300px;
-        div{
+        div {
           flex-direction: column;
           gap: 10px;
         }
         .payment-header {
           flex-direction: row;
           h2 {
-            font-size:1.6rem;
+            font-size: 1.6rem;
           }
           span {
             font-size: 2rem;
