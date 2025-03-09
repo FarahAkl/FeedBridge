@@ -40,4 +40,9 @@ Clone the repository:
 ## Project Diagrams
 All project diagrams, including system architecture and workflows, are available [here](https://drive.google.com/drive/folders/1TWNhUg-o04Az9l5K5VQg8EfqfQ_7ZDqm?usp=drive_link).
 
+## Project User Interface
+
+You can view the project UI design on Figma:  
+[🔗 Click here to open in Figma](https://www.figma.com/design/TvHBywRoAIyvOuRL00uNJv/Untitled?node-id=2-2&t=ICmbNTXVfEdkrRAc-1)
+
 
