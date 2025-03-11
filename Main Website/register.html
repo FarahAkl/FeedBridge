@@ -7,6 +7,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FeedBridge</title>
     <link rel="stylesheet" href="main.css" />
@@ -36,48 +44,72 @@
           <img src="imgs/image.png" alt="" />
           <p>انشاء حساب</p>
         </div>
-        <form action="" class="register-form">
+        <form action="" id="register-form">
           <div class="register-form-group">
-            <div>
+            <div class="form-control">
               <label for="username">الاسم</label>
               <input type="text" name="username" id="username" />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
             </div>
-            <div>
+            <div class="form-control">
               <label for="age">السن</label>
               <input type="number" name="age" id="age" />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
             </div>
           </div>
-          <div>
+          <div class="form-control">
             <label for="phone">رقم التليفون</label>
-            <input type="tel" name="phone" id="phone" />
+            <input type="tel" name="phone" id="phone" dir="rtl"/>
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <i class="fa-solid fa-circle-check"></i>
+            <small></small>
           </div>
           <div class="register-form-group">
-            <div>
+            <div class="form-control">
               <label for="country">الدوله</label>
               <input type="text" name="country" id="country" />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
             </div>
-            <div>
+            <div class="form-control">
               <label for="city">المدينه</label>
               <input type="text" name="city" id="city" />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <i class="fa-solid fa-circle-check"></i>
+              <small></small>
             </div>
           </div>
-          <div>
+          <div class="form-control">
             <label for="email">الايميل</label>
             <input type="email" name="email" id="email" />
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <i class="fa-solid fa-circle-check"></i>
+            <small></small>
           </div>
-          <div>
+          <div class="form-control">
             <label for="password">كلمه السر</label>
             <input type="password" name="password" id="password" />
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <i class="fa-solid fa-circle-check"></i>
+            <small></small>
           </div>
-          <div>
+          <div class="form-control">
             <label for="confirm-password">تاكيد كلمه السر</label>
             <input
               type="password"
               name="confirm-password"
               id="confirm-password"
             />
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <i class="fa-solid fa-circle-check"></i>
+            <small></small>
           </div>
-          <button type="submit" class="submit-btn btn">ارسال</button>
+          <button type="submit" class="submit-btn btn" id="register-btn">ارسال</button>
           <a href="login.html">لديك حساب؟</a>
         </form>
       </div>

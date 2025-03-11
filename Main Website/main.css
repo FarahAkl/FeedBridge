@@ -51,6 +51,50 @@ input {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
+.form-control {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px 0;
+  label {
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 5px 0;
+  }
+  i {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    visibility: hidden;
+  }
+  small {
+    display: inline-block;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: -20px;
+    visibility: hidden;
+  }
+  &.success {
+    input {
+      border: var(--hover-color) 2px solid;
+    }
+    .fa-circle-check {
+      visibility: visible;
+      color: var(--hover-color);
+    }
+  }
+  &.error {
+    input {
+      border: red 2px solid;
+      background-color: #ff00001f;
+    }
+    .fa-circle-exclamation,
+    small {
+      visibility: visible;
+      color: red;
+    }
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -174,12 +218,23 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    div {
-      display: flex;
+    .form-control {
       justify-content: space-between;
       align-items: center;
+      flex-direction: row;
       gap: 30px;
       margin: 10px 0;
+      i{
+        top:40%;
+      }
+      small {
+        right: 50%;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+      }
     }
     a {
       text-align: center;
@@ -207,7 +262,7 @@ header {
       font-weight: 600;
     }
   }
-  .register-form {
+  #register-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -220,24 +275,10 @@ header {
     padding: 20px 30px;
     gap: 5px;
     margin: 20px 0;
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      label {
-        font-weight: 500;
-        color: var(--text-color);
-        padding: 5px 0;
-      }
-    }
     .register-form-group {
       display: flex;
       flex-direction: row;
-      div {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
+      gap: 20px;
     }
     a {
       text-align: center;
@@ -310,7 +351,7 @@ header {
   padding: 20px 0;
   background-color: #333;
   background-image: url(imgs/partner\ background.jpg);
-  background-position:center;
+  background-position: center;
   background-size: cover;
   position: relative;
   &::after {
@@ -648,13 +689,10 @@ header {
         width: 200px;
       }
     }
-    .register-form {
+    #register-form {
       margin: 20px;
       .register-form-group {
         flex-direction: column;
-        div {
-          gap: 10px;
-        }
       }
     }
   }
