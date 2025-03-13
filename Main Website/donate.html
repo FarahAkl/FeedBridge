@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <!-- Font Awesome icons -->
+    <!-- Font awesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -25,45 +25,57 @@
         <img src="imgs/logo.png" alt="logo" class="logo-img" />
         <p>FeedBridge</p>
       </div>
+      <span class="material-symbols-outlined mobile-icon"> menu </span>
       <ul class="page-items">
         <li><a href="index.html">الرئيسيه</a></li>
         <li><a href="products.html">المنتجات</a></li>
         <li><a href="donate.html">تبرع</a></li>
         <li><a href="index.html#about">عن الموقع</a></li>
       </ul>
-      <span class="material-symbols-outlined mobile-icon"> menu </span>
       <div class="header-icons">
         <span class="material-symbols-outlined"> shopping_cart </span>
         <span class="material-symbols-outlined"> account_circle </span>
         <a href="login.html">تسجيل الدخول</a>
       </div>
     </header>
-    <div class="container">
-      <div class="login">
-        <img src="imgs/image.png" alt="user-icon" class="login-img" />
-        <h1 class="login-header">تسجيل الدخول</h1>
-        <form class="login-form" id="login-form">
-          <div class="form-control">
-            <label for="username">الايميل</label>
-            <input type="email" name="email" id="email" />
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <i class="fa-solid fa-circle-check"></i>
-            <small></small>
-          </div>
-          <div class="form-control">
-            <label for="password">كلمه المرور</label>
-            <input type="password" name="password" id="password" />
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <i class="fa-solid fa-circle-check"></i>
-            <small></small>
-          </div>
-          <button type="submit" class="submit-btn btn">ارسال</button>
-          <a href="register.html">ليس لديك حساب؟</a>
+    <div class="donate-container">
+      <div class="donate">
+        <div class="donate-img">
+          <img src="imgs/image.png" alt="" />
+        </div>
+      </div>
+      <div class="donate-form">
+        <form action="">
+
         </form>
       </div>
     </div>
-    <script src="script.js">
-
-    </script>
+    <footer class="footer">
+      <div class="footer-container">
+        <div>سياسه الخصوصيه</div>
+        <div>الشروط والاحكام</div>
+        <div class="footer-contact">
+          <p>الشكاوي و الاقتراحات</p>
+          <form class="footer-form">
+            <input type="text" />
+            <button>
+              ارسال
+              <span class="material-symbols-outlined"> check </span>
+            </button>
+          </form>
+        </div>
+        <div>
+          <p>تواصل معنا</p>
+          <div class="footer-social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <p class="copy-rights">جميع الحقوق محفوظه لمنصه FeedBridge</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
