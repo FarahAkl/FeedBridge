@@ -224,8 +224,8 @@ header {
       flex-direction: row;
       gap: 30px;
       margin: 10px 0;
-      i{
-        top:40%;
+      i {
+        top: 40%;
       }
       small {
         right: 50%;
@@ -846,6 +846,44 @@ header {
   .products-cards {
     .products-cards-container {
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+.donate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  gap: 50px;
+  .donate-img {
+    img {
+      width: 500px;
+    }
+  }
+  .donate-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #33c58d35;
+    padding: 30px 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color:var(--main-color);
+      input{
+        &::placeholder{
+          color: var(--main-color);
+          font-family: "IBM Plex Sans Arabic", serif;
+          font-weight: 600;
+        }
+      }
     }
   }
 }

@@ -39,10 +39,8 @@
       </div>
     </header>
     <div class="donate-container">
-      <div class="donate">
-        <div class="donate-img">
-          <img src="imgs/donation.png" alt="" width="500" />
-        </div>
+      <div class="donate-img">
+        <img src="imgs/donation.png" alt="donate-img"/>
       </div>
       <div class="donate-form">
         <form action="">
@@ -84,13 +82,14 @@
             required
           />
           <input
-            type="text"
+            type="number"
             name="donationQuantity"
             id="donationQuantity"
+            min="0"
             placeholder="الكمية ..."
             required
           />
-          <button type="submit">تبرع</button>
+          <button type="submit" class="btn">تبرع</button>
         </form>
       </div>
     </div>
