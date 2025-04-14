@@ -40,19 +40,15 @@
     </header>
     <div class="donate-container">
       <div class="donate-img">
-        <img src="imgs/donation.png" alt="donate-img"/>
+        <img src="imgs/donation.png" alt="donate-img" />
       </div>
       <div class="donate-form">
         <form action="">
-          <input type="file" name="donationFile" id="donationFile" />
-          <label for="donationFile">اضف صوره المنتج</label>
-          <input
-            type="phone"
-            name="donationPhone"
-            id="donationPhone"
-            placeholder="رقم الهاتف ..."
-            required
-          />
+          <label for="donationFile" class="upload-img">
+            <span class="material-symbols-outlined"> upload </span>
+            <p>اضف صوره المنتج</p>
+            <input type="file" name="donationFile" id="donationFile" />
+          </label>
           <input
             type="text"
             name="donarName"
@@ -60,33 +56,45 @@
             placeholder="الاسم بالكامل ..."
             required
           />
-          <input
-            type="date"
-            name="expireDate"
-            id="expireDate"
-            placeholder="تاريخ انتهاء الصلاحيه ..."
-            required
-          />
-          <input
-            type="text"
-            name="donationAddress"
-            id="donationAddress"
-            placeholder="العنوان ..."
-            required
-          />
+          <div class="group">
+            <input
+              type="date"
+              name="expireDate"
+              id="expireDate"
+              placeholder="تاريخ انتهاء الصلاحيه ..."
+              required
+            />
+            <input
+              type="number"
+              name="donationQuantity"
+              id="donationQuantity"
+              min="0"
+              placeholder="الكمية ..."
+              required
+            />
+          </div>
+          <div class="group">
+            <input
+              type="text"
+              name="donationAddress"
+              id="donationAddress"
+              placeholder="العنوان ..."
+              required
+            />
+            <input
+              type="phone"
+              name="donationPhone"
+              id="donationPhone"
+              placeholder="رقم الهاتف ..."
+              required
+            />
+          </div>
           <input
             type="text"
             name="donationDescription"
             id="donationDescription"
+            class="donationDescription"
             placeholder="وصف التبرع ..."
-            required
-          />
-          <input
-            type="number"
-            name="donationQuantity"
-            id="donationQuantity"
-            min="0"
-            placeholder="الكمية ..."
             required
           />
           <button type="submit" class="btn">تبرع</button>
