@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,12 +41,56 @@
     <div class="donate-container">
       <div class="donate">
         <div class="donate-img">
-          <img src="imgs/image.png" alt="" />
+          <img src="imgs/donation.png" alt="" width="500" />
         </div>
       </div>
       <div class="donate-form">
         <form action="">
-
+          <input type="file" name="donationFile" id="donationFile" />
+          <label for="donationFile">اضف صوره المنتج</label>
+          <input
+            type="phone"
+            name="donationPhone"
+            id="donationPhone"
+            placeholder="رقم الهاتف ..."
+            required
+          />
+          <input
+            type="text"
+            name="donarName"
+            id="donationName"
+            placeholder="الاسم بالكامل ..."
+            required
+          />
+          <input
+            type="date"
+            name="expireDate"
+            id="expireDate"
+            placeholder="تاريخ انتهاء الصلاحيه ..."
+            required
+          />
+          <input
+            type="text"
+            name="donationAddress"
+            id="donationAddress"
+            placeholder="العنوان ..."
+            required
+          />
+          <input
+            type="text"
+            name="donationDescription"
+            id="donationDescription"
+            placeholder="وصف التبرع ..."
+            required
+          />
+          <input
+            type="text"
+            name="donationQuantity"
+            id="donationQuantity"
+            placeholder="الكمية ..."
+            required
+          />
+          <button type="submit">تبرع</button>
         </form>
       </div>
     </div>
