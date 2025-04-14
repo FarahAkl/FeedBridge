@@ -37,53 +37,136 @@ const validateRegisterForm = () => {
   const cityVal = city.value.trim();
   const passwordVal = password.value.trim();
   const confirmPassVal = confirmPassword.value.trim();
-  usernameVal === ""
-    ? setErrorFor(username, "يجب ادخال قيمه في هذا الحقل")
-    : setSuccessFor(username);
-  ageVal === ""
-    ? setErrorFor(age, "يجب ادخال قيمه في هذا الحقل")
-    : setSuccessFor(age);
-  phoneVal === ""
-    ? setErrorFor(phone, "يجب ادخال قيمه في هذا الحقل")
-    : setSuccessFor(phone);
-  emailVal === ""
-    ? setErrorFor(email, "يجب ادخال قيمه في هذا الحقل")
-    : !isEmail(emailVal)
-    ? setErrorFor(email, "الايميل غير صالح")
-    : setSuccessFor(email);
-  passwordVal === ""
-    ? setErrorFor(password, "يجب ادخال قيمه في هذا الحقل")
-    : passwordVal.length < 8
-    ? setErrorFor(password, "كلمة السر يجب ألا تقل عن 8 أحرف")
-    : setSuccessFor(password);
-  confirmPassVal === ""
-    ? setErrorFor(confirmPassword, "يجب ادخال قيمه في هذا الحقل")
-    : passwordVal !== confirmPassVal
-    ? setErrorFor(confirmPassword, "كلمه السر غير متطابقه")
-    : setSuccessFor(confirmPassword);
-  countryVal === ""
-    ? setErrorFor(country, "يجب ادخال قيمه في هذا الحقل")
-    : setSuccessFor(country);
-  cityVal === ""
-    ? setErrorFor(city, "يجب ادخال قيمه في هذا الحقل")
-    : setSuccessFor(city);
 
-  showSuccessMessage();
+  let isValid = true;
+
+  // التحقق من صحة البيانات
+  isValid &= validateField(
+    username,
+    usernameVal,
+    "يجب ادخال قيمه في هذا الحقل"
+  );
+  isValid &= validateField(age, ageVal, "يجب ادخال قيمه في هذا الحقل");
+  isValid &= validateField(phone, phoneVal, "يجب ادخال قيمه في هذا الحقل");
+  isValid &= validateEmail(email, emailVal);
+  isValid &= validatePassword(password, passwordVal);
+  isValid &= validateConfirmPassword(
+    confirmPassword,
+    confirmPassVal,
+    passwordVal
+  );
+  isValid &= validateField(country, countryVal, "يجب ادخال قيمه في هذا الحقل");
+  isValid &= validateField(city, cityVal, "يجب ادخال قيمه في هذا الحقل");
+
+  if (isValid) {
+    const data = {
+      username: usernameVal,
+      age: ageVal,
+      phone: phoneVal,
+      email: emailVal,
+      country: countryVal,
+      city: cityVal,
+      password: passwordVal,
+    };
+
+    fetch("/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("تم التسجيل بنجاح");
+        // Redirect أو أي شيء آخر
+      })
+      .catch((err) => console.error("حدث خطأ:", err));
+  }
 };
 
 const validateLoginForm = () => {
   const emailVal = email.value.trim();
   const passwordVal = password.value.trim();
-  emailVal === ""
-    ? setErrorFor(email, "يجب ادخال قيمه في هذا الحقل")
-    : !isEmail(emailVal)
-    ? setErrorFor(email, "الايميل غير صالح")
-    : setSuccessFor(email);
-  passwordVal === ""
-    ? setErrorFor(password, "يجب ادخال قيمه في هذا الحقل")
-    : setSuccessFor(password);
 
-  showSuccessMessage(loginForm);
+  let isValid = true;
+
+  isValid &= validateEmail(email, emailVal);
+  isValid &= validateField(
+    password,
+    passwordVal,
+    "يجب ادخال قيمه في هذا الحقل"
+  );
+
+  if (isValid) {
+    const data = {
+      email: emailVal,
+      password: passwordVal,
+    };
+
+    fetch("/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          alert("تم تسجيل الدخول");
+          window.location.href = data.redirect; // أو أي صفحة
+        } else {
+          alert("بيانات غير صحيحة");
+        }
+      })
+      .catch((err) => console.error("حدث خطأ:", err));
+  }
+};
+
+// Duplicated validation logic simplified
+const validateField = (input, value, errorMessage) => {
+  if (value === "") {
+    setErrorFor(input, errorMessage);
+    return false;
+  }
+  setSuccessFor(input);
+  return true;
+};
+
+const validateEmail = (input, value) => {
+  if (value === "") {
+    setErrorFor(input, "يجب ادخال قيمه في هذا الحقل");
+    return false;
+  }
+  if (!isEmail(value)) {
+    setErrorFor(input, "الايميل غير صالح");
+    return false;
+  }
+  setSuccessFor(input);
+  return true;
+};
+
+const validatePassword = (input, value) => {
+  if (value === "") {
+    setErrorFor(input, "يجب ادخال قيمه في هذا الحقل");
+    return false;
+  }
+  if (value.length < 8) {
+    setErrorFor(input, "كلمة السر يجب ألا تقل عن 8 أحرف");
+    return false;
+  }
+  setSuccessFor(input);
+  return true;
+};
+
+const validateConfirmPassword = (input, value, password) => {
+  if (value === "") {
+    setErrorFor(input, "يجب ادخال قيمه في هذا الحقل");
+    return false;
+  }
+  if (value !== password) {
+    setErrorFor(input, "كلمه السر غير متطابقه");
+    return false;
+  }
+  setSuccessFor(input);
+  return true;
 };
 
 const setErrorFor = (input, message) => {
