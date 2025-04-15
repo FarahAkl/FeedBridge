@@ -205,3 +205,10 @@ mobileMenu.addEventListener("click", () => {
   pageItems.classList.toggle("active");
 });
 
+// Payment confirm
+
+confirmBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector(".payment-container").style.display = "none";
+  document.querySelector(".confirm-container").style.display = "flex";
+});

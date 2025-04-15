@@ -973,3 +973,8 @@ header {
     }
   }
 }
+@media (max-width:425px) {
+  .confirm-container{
+    text-align: center;
+  }
+}
