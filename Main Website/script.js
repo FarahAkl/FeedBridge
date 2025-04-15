@@ -14,6 +14,9 @@ const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
 const registerBtn = document.querySelector("#register-btn");
 
+const confirmBtn = document.querySelector(".confirm-btn");
+
+// Add event listeners to the register and login forms
 if (registerForm) {
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -28,6 +31,7 @@ if (loginForm) {
   });
 }
 
+// Validate register form
 const validateRegisterForm = () => {
   const usernameVal = username.value.trim();
   const ageVal = age.value.trim();
@@ -40,7 +44,7 @@ const validateRegisterForm = () => {
 
   let isValid = true;
 
-  // التحقق من صحة البيانات
+  // Validation for each field
   isValid &= validateField(
     username,
     usernameVal,
@@ -83,6 +87,7 @@ const validateRegisterForm = () => {
   }
 };
 
+// Validate login form
 const validateLoginForm = () => {
   const emailVal = email.value.trim();
   const passwordVal = password.value.trim();
@@ -169,6 +174,7 @@ const validateConfirmPassword = (input, value, password) => {
   return true;
 };
 
+// Set error and success message
 const setErrorFor = (input, message) => {
   const formControl = input.parentElement;
   const small = formControl.querySelector("small");
@@ -194,6 +200,8 @@ const showSuccessMessage = () => {
   successCount === formControls.length && alert("تم التسجيل بنجاح");
 };
 
+// Mobile menu toggle
 mobileMenu.addEventListener("click", () => {
   pageItems.classList.toggle("active");
 });
+

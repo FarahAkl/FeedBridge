@@ -626,6 +626,31 @@ header {
       }
     }
   }
+  .confirm-container{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 60px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #00000025;
+    .check-icon{
+      font-size: 10rem;
+      color: var(--main-color);
+    }
+    h2{
+      font-size: 2rem;
+      color: var(--main-color);
+    }
+    p{
+      color: var(--text-color);
+    }
+    .btn{
+      color: #fff;
+    }
+  }
 }
 @media (max-width: 991px) {
   .stats-section {
