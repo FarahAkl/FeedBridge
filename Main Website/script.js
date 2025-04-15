@@ -212,3 +212,27 @@ confirmBtn.addEventListener("click", (e) => {
   document.querySelector(".payment-container").style.display = "none";
   document.querySelector(".confirm-container").style.display = "flex";
 });
+
+// Feedback Stars
+
+const checkboxes = document.querySelectorAll(".stars input");
+let currentRating = 0;
+
+checkboxes.forEach((checkbox, index) => {
+  checkbox.addEventListener("click", () => {
+    const clickedRating = index + 1;
+
+    // If clicking the same rating, reset
+    if (clickedRating === currentRating) {
+      currentRating = 0;
+    } else {
+      currentRating = clickedRating;
+    }
+
+    // Update checkbox states
+    checkboxes.forEach((cb, i) => {
+      cb.checked = i < currentRating;
+    });
+  });
+});
+
