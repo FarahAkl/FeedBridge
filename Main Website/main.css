@@ -20,6 +20,8 @@ li {
 }
 a {
   text-decoration: none;
+  outline: none;
+  border:none;
   &:visited {
     color: inherit;
   }
