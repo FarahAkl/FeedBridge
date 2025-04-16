@@ -206,12 +206,13 @@ mobileMenu.addEventListener("click", () => {
 });
 
 // Payment confirm
-
-confirmBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.querySelector(".payment-container").style.display = "none";
-  document.querySelector(".confirm-container").style.display = "flex";
-});
+if (confirmBtn) {
+  confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector(".payment-container").style.display = "none";
+    document.querySelector(".confirm-container").style.display = "flex";
+  });
+}
 
 // Feedback Stars
 
@@ -236,3 +237,23 @@ checkboxes.forEach((checkbox, index) => {
   });
 });
 
+// Change the upload icon to image
+
+const fileInput = document.getElementById("donationFile");
+
+fileInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const uploadIcon = document.querySelector("#uploadIcon");
+      uploadIcon.style.backgroundImage = `url(${e.target.result})`;
+      uploadIcon.style.backgroundSize = "cover";
+      uploadIcon.style.backgroundPosition = "center";
+      uploadIcon.style.width = "100px"; 
+      uploadIcon.style.height = "100px"; 
+      uploadIcon.textContent = "";
+    };
+    reader.readAsDataURL(file);
+  }
+});
