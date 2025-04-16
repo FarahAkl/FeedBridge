@@ -41,18 +41,16 @@
       </div>
     </header>
     <div class="cart-container">
-      <h2>سله المنتجات</h2>
-      <div class="cart-header">
-        <div class="checkbox"><input type="checkbox" /></div>
+      <h2 class="cart-header">سله المنتجات</h2>
+      <div>
         <div>المنتجات</div>
         <div>الكميه</div>
       </div>
       <div class="cart-item">
         <div class="product-section">
-          <input type="checkbox" />
           <div class="product-info">
             <div class="product-image">
-                <img src="imgs/img.png" alt="">
+              <img src="imgs/img.png" alt="" />
             </div>
             <div class="product-text">
               <div>اسم المنتج</div>
@@ -62,11 +60,42 @@
         </div>
         <div class="qty-section">
           <div class="quantity-controls">
-            <button>-</button>
             <span>1</span>
-            <button>+</button>
+            <div class="control-btns">
+              <button>-</button>
+              <button>+</button>
+            </div>
           </div>
-          <span class="material-symbols-outlined"> delete </span>
+          <div class="delete-btn">
+            <span class="material-symbols-outlined"> delete </span>
+            <span>حذف</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart-item">
+        <div class="product-section">
+          <div class="product-info">
+            <div class="product-image">
+              <img src="imgs/img.png" alt="" />
+            </div>
+            <div class="product-text">
+              <div>اسم المنتج</div>
+              <div>الوصف</div>
+            </div>
+          </div>
+        </div>
+        <div class="qty-section">
+          <div class="quantity-controls">
+            <span>1</span>
+            <div class="control-btns">
+              <button>-</button>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="delete-btn">
+            <span class="material-symbols-outlined"> delete </span>
+            <span>حذف</span>
+          </div>
         </div>
       </div>
       <button class="btn">تأكيد الطلب</button>
@@ -97,5 +126,6 @@
       </div>
       <p class="copy-rights">جميع الحقوق محفوظه لمنصه FeedBridge</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
