@@ -248,7 +248,6 @@ if (fileInput) {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        
         uploadIcon.style.backgroundImage = `url(${e.target.result})`;
         uploadIcon.style.backgroundSize = "cover";
         uploadIcon.style.backgroundPosition = "center";
@@ -258,5 +257,19 @@ if (fileInput) {
       };
       reader.readAsDataURL(file);
     }
+  });
+}
+
+// Delete product cart
+const deleteProductBtn = document.querySelectorAll(".delete-btn");
+
+if (deleteProductBtn) {
+  deleteProductBtn.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const cartItem = btn.closest(".cart-item");
+      if (cartItem) {
+        cartItem.remove();
+      }
+    });
   });
 }
