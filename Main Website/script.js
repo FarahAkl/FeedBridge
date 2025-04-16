@@ -245,13 +245,13 @@ fileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (file) {
     const reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = (e) => {
       const uploadIcon = document.querySelector("#uploadIcon");
       uploadIcon.style.backgroundImage = `url(${e.target.result})`;
       uploadIcon.style.backgroundSize = "cover";
       uploadIcon.style.backgroundPosition = "center";
-      uploadIcon.style.width = "100px"; 
-      uploadIcon.style.height = "100px"; 
+      uploadIcon.style.width = "100px";
+      uploadIcon.style.height = "100px";
       uploadIcon.textContent = "";
     };
     reader.readAsDataURL(file);

@@ -2,7 +2,6 @@
 <html lang="en" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google fonts icons -->
     <link
       rel="stylesheet"
@@ -16,6 +15,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FeedBridge</title>
     <link rel="stylesheet" href="main.css" />
   </head>
@@ -30,7 +30,7 @@
         <li><a href="index.html">الرئيسيه</a></li>
         <li><a href="products.html">المنتجات</a></li>
         <li><a href="donate.html">تبرع</a></li>
-        <li><a href="index.html#about">عن الموقع</a></li>
+        <li><a href="#about">عن الموقع</a></li>
       </ul>
       <div class="header-icons">
         <a href="cart.html">
@@ -40,75 +40,36 @@
         <a href="login.html">تسجيل الدخول</a>
       </div>
     </header>
-    <div class="donate-container">
-      <div class="donate-img">
-        <img src="imgs/donation.png" alt="donate-img" />
+    <div class="cart-container">
+      <h2>سله المنتجات</h2>
+      <div class="cart-header">
+        <div class="checkbox"><input type="checkbox" /></div>
+        <div>المنتجات</div>
+        <div>الكميه</div>
       </div>
-      <div class="donate-form">
-        <form action="">
-          <label for="donationFile" class="upload-img">
-            <span class="material-symbols-outlined" id="uploadIcon">
-              upload
-            </span>
-            <p>اضف صوره المنتج</p>
-            <input
-              type="file"
-              name="donationFile"
-              id="donationFile"
-              accept="image/*"
-            />
-          </label>
-          <input
-            type="text"
-            name="donarName"
-            id="donationName"
-            placeholder="الاسم بالكامل ..."
-            required
-          />
-          <div class="group">
-            <input
-              type="date"
-              name="expireDate"
-              id="expireDate"
-              placeholder="تاريخ انتهاء الصلاحيه ..."
-              required
-            />
-            <input
-              type="number"
-              name="donationQuantity"
-              id="donationQuantity"
-              min="0"
-              placeholder="الكمية ..."
-              required
-            />
+      <div class="cart-item">
+        <div class="product-section">
+          <input type="checkbox" />
+          <div class="product-info">
+            <div class="product-image">
+                <img src="imgs/img.png" alt="">
+            </div>
+            <div class="product-text">
+              <div>اسم المنتج</div>
+              <div>الوصف</div>
+            </div>
           </div>
-          <div class="group">
-            <input
-              type="text"
-              name="donationAddress"
-              id="donationAddress"
-              placeholder="العنوان ..."
-              required
-            />
-            <input
-              type="phone"
-              name="donationPhone"
-              id="donationPhone"
-              placeholder="رقم الهاتف ..."
-              required
-            />
+        </div>
+        <div class="qty-section">
+          <div class="quantity-controls">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
           </div>
-          <input
-            type="text"
-            name="donationDescription"
-            id="donationDescription"
-            class="donationDescription"
-            placeholder="وصف التبرع ..."
-            required
-          />
-          <button type="submit" class="btn">تبرع</button>
-        </form>
+          <span class="material-symbols-outlined"> delete </span>
+        </div>
       </div>
+      <button class="btn">تأكيد الطلب</button>
     </div>
     <footer class="footer">
       <div class="footer-container">
@@ -136,6 +97,5 @@
       </div>
       <p class="copy-rights">جميع الحقوق محفوظه لمنصه FeedBridge</p>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>

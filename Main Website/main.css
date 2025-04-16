@@ -129,6 +129,11 @@ header {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 .footer {
