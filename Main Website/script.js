@@ -273,3 +273,33 @@ if (deleteProductBtn) {
     });
   });
 }
+
+// quantity number increment and decrement
+
+const quantity = document.querySelectorAll(".quantity");
+const incrementBtn = document.querySelectorAll(".inc-btn"); 
+const decrementBtn = document.querySelectorAll(".dec-btn");
+
+if (incrementBtn) { 
+  incrementBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      quantity.forEach(q => {
+        let currentValue = parseInt(q.textContent);
+        q.textContent = currentValue + 1;
+      });
+    });
+  });
+}
+
+if (decrementBtn) { 
+  decrementBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      quantity.forEach(q => {
+        let currentValue = parseInt(q.textContent);
+        if (currentValue > 1) {
+          q.textContent = currentValue - 1;
+        }
+      });
+    });
+  });
+}
