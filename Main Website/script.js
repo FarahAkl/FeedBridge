@@ -215,12 +215,13 @@ if (confirmBtn) {
 }
 
 // Feedback Stars
-
+const labels = document.querySelectorAll(".stars label");
 const checkboxes = document.querySelectorAll(".stars input");
 let currentRating = 0;
 
-checkboxes.forEach((checkbox, index) => {
-  checkbox.addEventListener("click", () => {
+labels.forEach((label, index) => {
+  label.addEventListener("click", (e) => {
+    e.preventDefault();
     const clickedRating = index + 1;
 
     // If clicking the same rating, reset

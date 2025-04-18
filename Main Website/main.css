@@ -1062,7 +1062,6 @@ header {
     .stars {
       display: flex;
       justify-content: center;
-      flex-direction: row-reverse;
       input[type="checkbox"] {
         display: none;
       }
@@ -1071,9 +1070,8 @@ header {
         font-size: 2rem;
         color: #ccc;
       }
-      input:checked ~ label,
-      label:hover,
-      label:hover ~ label {
+      input:checked + label,
+      label:hover + label {
         color: gold;
       }
     }
