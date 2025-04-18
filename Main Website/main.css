@@ -225,24 +225,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    .form-control {
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-      gap: 30px;
-      margin: 10px 0;
-      i {
-        top: 40%;
-      }
-      small {
-        right: 50%;
-        transform: translateX(50%);
-        -webkit-transform: translateX(50%);
-        -moz-transform: translateX(50%);
-        -ms-transform: translateX(50%);
-        -o-transform: translateX(50%);
-      }
-    }
+    gap: 15px;
     a {
       text-align: center;
       margin: 10px 0;
