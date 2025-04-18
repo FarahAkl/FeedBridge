@@ -45,4 +45,6 @@ All project diagrams, including system architecture and workflows, are available
 You can view the project UI design on Figma:  
 [🔗 Click here to open in Figma](https://www.figma.com/design/TvHBywRoAIyvOuRL00uNJv/Untitled?node-id=2-2&t=ICmbNTXVfEdkrRAc-1)
 
+## 🚀 Live Demo
 
+Check out the live demo [here](https://feedbridge.netlify.app)
