@@ -261,19 +261,6 @@ if (fileInput) {
   });
 }
 
-// Delete product cart
-const deleteProductBtn = document.querySelectorAll(".delete-btn");
-
-if (deleteProductBtn) {
-  deleteProductBtn.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const cartItem = btn.closest(".cart-item");
-      if (cartItem) {
-        cartItem.remove();
-      }
-    });
-  });
-}
 
 // quantity number increment and decrement
 
@@ -300,6 +287,67 @@ if (decrementBtns) {
       if (currentValue > 1) {
         quantitySpan.textContent = currentValue - 1;
       }
+    });
+  });
+}
+
+// Add to cart
+
+const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
+const cartItemsContainer = document.querySelector(".cart-container");
+let cartData = [];
+
+
+const displayCartItems = (cartData) => {
+  cartItemsContainer.innerHTML = ""; // Clear previous items
+  if (cartData.length === 0) {
+    cartItemsContainer.innerHTML = `<p>لا توجد عناصر في السلة</p>`;
+    return;
+  } else {
+    cartData.forEach((item,index) => {
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
+      cartItem.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <h2>${item.name}</h2>
+      <p>${item.desc}</p>
+      <button class="delete-btn" data-index="${index}">حذف</button>
+    `;
+      cartItemsContainer.appendChild(cartItem);
+    });
+  }
+};
+
+// addToCart function
+const addToCart = (e) => {
+  const productCard = e.target.closest(".product-card");
+  const productName = productCard.querySelector("h2").textContent;
+  const productDesc = productCard.querySelector("p").textContent;
+  const productImage = productCard.querySelector("img").src;
+
+  let cartItemHTML = {
+    name: productName,
+    desc: productDesc,
+    image: productImage,
+  };
+  cartData.push(cartItemHTML);
+  displayCartItems(cartData);
+};
+
+addToCartBtns.forEach((btn) => {
+  btn.addEventListener("click", addToCart);
+});
+
+// Delete product cart
+const deleteProductBtn = document.querySelectorAll(".delete-btn");
+
+if (deleteProductBtn) {
+  deleteProductBtn.forEach((btn) => {
+    btn.addEventListener("click",  (e) => {
+      const cartItem = e.target.closest(".cart-item");
+      const index = Array.from(cartItemsContainer.children).indexOf(cartItem);
+      cartData.splice(index, 1); // Remove item from cartData array
+      displayCartItems(cartData); // Update the displayed cart items
     });
   });
 }
