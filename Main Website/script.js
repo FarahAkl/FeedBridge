@@ -313,7 +313,6 @@ const displayCartItems = (cartData) => {
   attachCartEvents();
 };
 
-
 // addToCart function
 const addToCart = (e) => {
   const productCard = e.target.closest(".product-card");
@@ -331,10 +330,10 @@ const addToCart = (e) => {
   };
   cartData.push(cartItemHTML);
   localStorage.setItem("cartData", JSON.stringify(cartData)); // Save to local storage
-  if(cartItemsContainer) displayCartItems(cartData);
+  if (cartItemsContainer) displayCartItems(cartData);
 };
 
-const attachCartEvents = () => { 
+const attachCartEvents = () => {
   const incBtns = document.querySelectorAll(".inc-btn");
   const decBtns = document.querySelectorAll(".dec-btn");
   const delBtns = document.querySelectorAll(".delete-btn");
@@ -346,9 +345,9 @@ const attachCartEvents = () => {
       localStorage.setItem("cartData", JSON.stringify(cartData));
       displayCartItems(cartData);
     });
-  })
+  });
 
-  decBtns.forEach((btn) => { 
+  decBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const index = parseInt(btn.dataset.index);
       if (cartData[index].quantity > 1) {
@@ -367,14 +366,40 @@ const attachCartEvents = () => {
       displayCartItems(cartData);
     });
   });
-}
+};
 
-if (addToCartBtns.length > 0) { 
+if (addToCartBtns.length > 0) {
   addToCartBtns.forEach((btn) => {
     btn.addEventListener("click", addToCart);
   });
 }
 
-if(cartItemsContainer) {
+if (cartItemsContainer) {
   displayCartItems(cartData);
+}
+
+// Confirm order button
+
+const confirmOrder = document.querySelector(".confirm-order")
+if (confirmOrder) {
+  confirmOrder.addEventListener("click", () => {
+    if (cartData.length === 0) {
+      alert("لا توجد عناصر في السلة لتأكيد الطلب.");
+      return;
+    }
+    const orderData = {
+      items: cartData,
+    };
+    document.querySelector(
+      ".cart-section"
+    ).innerHTML = `<div class="confirm-container">
+        <span class="material-symbols-outlined check-icon"> check_circle </span>
+        <h2>تـــم الطلب بنجاح</h2>
+        <a href="index.html" class="btn">العوده للرئيسيه</a>
+      </div>`;
+
+    cartData = [];
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+    displayCartItems(cartData);
+  });
 }
