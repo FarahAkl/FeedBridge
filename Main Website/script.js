@@ -261,66 +261,64 @@ if (fileInput) {
   });
 }
 
-
-// quantity number increment and decrement
-
-const incrementBtns = document.querySelectorAll(".inc-btn");
-const decrementBtns = document.querySelectorAll(".dec-btn");
-
-if (incrementBtns) {
-  incrementBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const cartItem = btn.closest(".cart-item");
-      const quantitySpan = cartItem.querySelector(".quantity");
-      let currentValue = parseInt(quantitySpan.textContent);
-      quantitySpan.textContent = currentValue + 1;
-    });
-  });
-}
-
-if (decrementBtns) {
-  decrementBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const cartItem = btn.closest(".cart-item");
-      const quantitySpan = cartItem.querySelector(".quantity");
-      let currentValue = parseInt(quantitySpan.textContent);
-      if (currentValue > 1) {
-        quantitySpan.textContent = currentValue - 1;
-      }
-    });
-  });
-}
-
 // Add to cart
 
 const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
 const cartItemsContainer = document.querySelector(".cart-container");
-let cartData = [];
+let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
-
+// Display cart items from local storage
 const displayCartItems = (cartData) => {
-  cartItemsContainer.innerHTML = ""; // Clear previous items
+  if (!cartItemsContainer) return;
+
+  cartItemsContainer.innerHTML = "";
   if (cartData.length === 0) {
     cartItemsContainer.innerHTML = `<p>لا توجد عناصر في السلة</p>`;
     return;
-  } else {
-    cartData.forEach((item,index) => {
-      const cartItem = document.createElement("div");
-      cartItem.classList.add("cart-item");
-      cartItem.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <h2>${item.name}</h2>
-      <p>${item.desc}</p>
-      <button class="delete-btn" data-index="${index}">حذف</button>
-    `;
-      cartItemsContainer.appendChild(cartItem);
-    });
   }
+
+  cartData.forEach((item, index) => {
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+    cartItem.innerHTML = `
+        <div class="cart-item">
+        <div class="product-section">
+          <div class="product-info">
+            <div class="product-image">
+              <img src="${item.image}" alt="${item.name}" />
+            </div>
+            <div class="product-text">
+              <div>${item.name}</div>
+              <div>${item.desc}</div>
+            </div>
+          </div>
+        </div>
+        <div class="qty-section">
+          <div class="quantity-controls">
+            <span class="quantity">${item.quantity}</span>
+            <div class="control-btns">
+              <button class="dec-btn" data-index="${index}">-</button>
+              <button class="inc-btn" data-index="${index}">+</button>
+            </div>
+          </div>
+          <div class="delete-btn" data-index="${index}>
+            <span class="material-symbols-outlined""> delete </span>
+            <span>حذف</span>
+          </div>
+        </div>
+      </div>
+      `;
+    cartItemsContainer.appendChild(cartItem);
+  });
+  attachCartEvents();
 };
+
 
 // addToCart function
 const addToCart = (e) => {
   const productCard = e.target.closest(".product-card");
+  if (!productCard) return; // Ensure the product card is found
+
   const productName = productCard.querySelector("h2").textContent;
   const productDesc = productCard.querySelector("p").textContent;
   const productImage = productCard.querySelector("img").src;
@@ -329,25 +327,54 @@ const addToCart = (e) => {
     name: productName,
     desc: productDesc,
     image: productImage,
+    quantity: 1,
   };
   cartData.push(cartItemHTML);
-  displayCartItems(cartData);
+  localStorage.setItem("cartData", JSON.stringify(cartData)); // Save to local storage
+  if(cartItemsContainer) displayCartItems(cartData);
 };
 
-addToCartBtns.forEach((btn) => {
-  btn.addEventListener("click", addToCart);
-});
+const attachCartEvents = () => { 
+  const incBtns = document.querySelectorAll(".inc-btn");
+  const decBtns = document.querySelectorAll(".dec-btn");
+  const delBtns = document.querySelectorAll(".delete-btn");
 
-// Delete product cart
-const deleteProductBtn = document.querySelectorAll(".delete-btn");
+  incBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const index = parseInt(btn.dataset.index);
+      cartData[index].quantity += 1;
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+      displayCartItems(cartData);
+    });
+  })
 
-if (deleteProductBtn) {
-  deleteProductBtn.forEach((btn) => {
-    btn.addEventListener("click",  (e) => {
-      const cartItem = e.target.closest(".cart-item");
-      const index = Array.from(cartItemsContainer.children).indexOf(cartItem);
-      cartData.splice(index, 1); // Remove item from cartData array
-      displayCartItems(cartData); // Update the displayed cart items
+  decBtns.forEach((btn) => { 
+    btn.addEventListener("click", () => {
+      const index = parseInt(btn.dataset.index);
+      if (cartData[index].quantity > 1) {
+        cartData[index].quantity -= 1;
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+        displayCartItems(cartData);
+      }
     });
   });
+
+  delBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const index = parseInt(btn.dataset.index);
+      cartData.splice(index, 1);
+      localStorage.setItem("cartData", JSON.stringify(cartData));
+      displayCartItems(cartData);
+    });
+  });
+}
+
+if (addToCartBtns.length > 0) { 
+  addToCartBtns.forEach((btn) => {
+    btn.addEventListener("click", addToCart);
+  });
+}
+
+if(cartItemsContainer) {
+  displayCartItems(cartData);
 }
