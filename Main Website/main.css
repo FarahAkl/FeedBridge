@@ -1099,13 +1099,20 @@ header {
   }
 }
 
-.cart-container {
+.cart-section {
   padding: 80px 100px;
 
   .cart-header {
     font-size: 2.5rem;
     color: var(--main-color);
   }
+  .no-items {
+    font-size: 2rem;
+    color: var(--text-color);
+    text-align: center;
+    margin: 20px auto;
+    min-height: 28vh;
+  } 
   .cart-item {
     display: flex;
     align-items: center;
@@ -1178,13 +1185,16 @@ header {
 }
 
 @media (max-width: 768px) {
-  .cart-container {
-    padding: 20px;
+  .cart-section {
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 10px;  
+    .no-items {
+      font-size: 1.5rem;
+    }
     .cart-item {
       flex-direction: column;
       min-width: 200px;

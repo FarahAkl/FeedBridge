@@ -273,7 +273,7 @@ const displayCartItems = (cartData) => {
 
   cartItemsContainer.innerHTML = "";
   if (cartData.length === 0) {
-    cartItemsContainer.innerHTML = `<p>لا توجد عناصر في السلة</p>`;
+    cartItemsContainer.innerHTML = `<p class="no-items">لا توجد عناصر في السلة</p>`;
     return;
   }
 
@@ -301,8 +301,8 @@ const displayCartItems = (cartData) => {
               <button class="inc-btn" data-index="${index}">+</button>
             </div>
           </div>
-          <div class="delete-btn" data-index="${index}>
-            <span class="material-symbols-outlined""> delete </span>
+          <div class="delete-btn" data-index="${index}">
+            <span class="material-symbols-outlined"> delete </span>
             <span>حذف</span>
           </div>
         </div>
