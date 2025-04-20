@@ -205,14 +205,6 @@ mobileMenu.addEventListener("click", () => {
   pageItems.classList.toggle("active");
 });
 
-// Payment confirm
-if (confirmBtn) {
-  confirmBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.querySelector(".payment-container").style.display = "none";
-    document.querySelector(".confirm-container").style.display = "flex";
-  });
-}
 
 // Feedback Stars
 const labels = document.querySelectorAll(".stars label");
@@ -401,5 +393,21 @@ if (confirmOrder) {
     cartData = [];
     localStorage.setItem("cartData", JSON.stringify(cartData));
     displayCartItems(cartData);
+  });
+}
+
+const cardNumber = document.querySelector(".card-number");
+const cardName = document.querySelector(".cardholder-name");
+
+// Payment confirm
+if (confirmBtn) {
+  confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if(!cardNumber.value || !cardName.value) {
+      alert("يرجى ملء جميع الحقول");
+      return;
+    }
+    document.querySelector(".payment-container").style.display = "none";
+    document.querySelector(".confirm-container").style.display = "flex";
   });
 }
