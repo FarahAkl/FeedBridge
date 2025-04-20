@@ -399,12 +399,48 @@ if (confirmOrder) {
 const cardNumber = document.querySelector(".card-number");
 const cardName = document.querySelector(".cardholder-name");
 
+// Format card number input
+cardNumber.addEventListener("input", (e) => {
+  let value = e.target.value.replace(/\D/g, "");
+  let formatted = value.match(/.{1,4}/g);
+  e.target.value = formatted ? formatted.join(" ") : "";
+});
+
+const isValidCardholderName = (n) => {
+  const regex = /^[A-Za-z\u0600-\u06FF\s]{2,}$/; // includes Arabic characters too
+  return regex.test(n.trim());
+}
+
+const isValidCardNumber = (n) => {
+  const sanitized = n.replace(/\s+/g, ""); // remove spaces
+  const onlyDigits = /^\d+$/;
+
+  return (
+    onlyDigits.test(sanitized) &&
+    sanitized.length >= 13 &&
+    sanitized.length <= 19
+  );
+}
 // Payment confirm
 if (confirmBtn) {
   confirmBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
+    
+    const numberValue = cardNumber.value.trim();
+    const nameValue = cardName.value.trim();
+
     if(!cardNumber.value || !cardName.value) {
       alert("يرجى ملء جميع الحقول");
+      return;
+    }
+    if (!isValidCardNumber(numberValue)) {
+      alert("رقم البطاقة غير صالح");
+      return;
+    }
+
+    if (!isValidCardholderName(nameValue)) {
+      alert("اسم حامل البطاقة غير صالح");
       return;
     }
     document.querySelector(".payment-container").style.display = "none";
