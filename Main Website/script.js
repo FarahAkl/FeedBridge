@@ -205,7 +205,6 @@ mobileMenu.addEventListener("click", () => {
   pageItems.classList.toggle("active");
 });
 
-
 // Feedback Stars
 const labels = document.querySelectorAll(".stars label");
 const checkboxes = document.querySelectorAll(".stars input");
@@ -365,6 +364,13 @@ if (addToCartBtns.length > 0) {
     btn.addEventListener("click", addToCart);
   });
 }
+if (addToCartBtns.length > 0) {
+  addToCartBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      alert("تمت الإضافة إلى السلة بنجاح");
+    });
+  });
+}
 
 if (cartItemsContainer) {
   displayCartItems(cartData);
@@ -372,7 +378,7 @@ if (cartItemsContainer) {
 
 // Confirm order button
 
-const confirmOrder = document.querySelector(".confirm-order")
+const confirmOrder = document.querySelector(".confirm-order");
 if (confirmOrder) {
   confirmOrder.addEventListener("click", () => {
     if (cartData.length === 0) {
@@ -409,7 +415,7 @@ cardNumber.addEventListener("input", (e) => {
 const isValidCardholderName = (n) => {
   const regex = /^[A-Za-z\u0600-\u06FF\s]{2,}$/; // includes Arabic characters too
   return regex.test(n.trim());
-}
+};
 
 const isValidCardNumber = (n) => {
   const sanitized = n.replace(/\s+/g, ""); // remove spaces
@@ -420,17 +426,16 @@ const isValidCardNumber = (n) => {
     sanitized.length >= 13 &&
     sanitized.length <= 19
   );
-}
+};
 // Payment confirm
 if (confirmBtn) {
   confirmBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    
     const numberValue = cardNumber.value.trim();
     const nameValue = cardName.value.trim();
 
-    if(!cardNumber.value || !cardName.value) {
+    if (!cardNumber.value || !cardName.value) {
       alert("يرجى ملء جميع الحقول");
       return;
     }
