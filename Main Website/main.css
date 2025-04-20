@@ -641,7 +641,7 @@ header {
       }
     }
   }
-  .confirm-container{
+  .confirm-container {
     display: none;
   }
 }
@@ -1228,6 +1228,97 @@ header {
               padding: 2px 5px;
             }
           }
+        }
+      }
+    }
+  }
+}
+.profile-container {
+  padding: 80px 100px;
+  .heading {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    font-weight: 600;
+    display: flex;
+  }
+  .sub-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5rem;
+    margin: 30px 0;
+    span {
+      font-size: 2rem;
+      color: var(--main-color);
+    }
+  }
+  .info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    width: 80%;
+    background-color: #efefef;
+    padding: 30px 50px;
+    border-radius: 10px;
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      .info-label {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+      .info-value {
+        font-size: 1.2rem;
+        color: var(--main-color);
+        font-weight: 600;
+      }
+      .material-symbols-outlined {
+        font-size: 2rem;
+        color: var(--main-color);
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .profile-container {
+    .info-container {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+    .heading {
+      font-size: 1.8rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+    .info-container {
+      padding: 20px;
+      gap: 20px;
+      width: 100%;
+      .info-item {
+        gap: 10px;
+        .info-label,
+        .info-value {
+          font-size: 1rem;
+        }
+        .material-symbols-outlined {
+          font-size: 1.5rem;
         }
       }
     }
