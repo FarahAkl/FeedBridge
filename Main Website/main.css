@@ -538,6 +538,8 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 60px;
     .product-card {
       background-color: #fff;
       box-shadow: 5px 5px 15px #00000025;
