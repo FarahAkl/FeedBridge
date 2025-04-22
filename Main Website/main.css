@@ -135,6 +135,38 @@ header {
       align-items: center;
     }
   }
+  .dropdown{
+    background-color: #d9d9d9;
+    position: absolute;
+    left: 20px;
+    top: 80px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: var(--main-color);
+    .dropdown-toggle {
+      border: none;
+      color: var(--main-color);
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .dropdown-menu {
+      bottom: 20px;
+      display: none;
+      flex-direction: column;
+      li{
+        padding: 20px 10px;
+        .dropdown-item{
+          gap:10px;
+          justify-content: center;
+          align-items: center;
+        }
+        a{
+          color: var(--main-color);
+        }
+      }
+    }
+  }
 }
 .footer {
   background-color: var(--main-color);

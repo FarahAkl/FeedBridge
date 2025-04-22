@@ -16,6 +16,16 @@ const registerBtn = document.querySelector("#register-btn");
 
 const confirmBtn = document.querySelector(".confirm-btn");
 
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+
+if (dropdownToggle) {
+  dropdownToggle.addEventListener("click", () => {
+    dropdownMenu.style.display =
+      dropdownMenu.style.display === "flex" ? "none" : "flex";
+  });
+}
+
 // Add event listeners to the register and login forms
 if (registerForm) {
   registerForm.addEventListener("submit", (e) => {
@@ -72,18 +82,6 @@ const validateRegisterForm = () => {
       city: cityVal,
       password: passwordVal,
     };
-
-    fetch("/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        alert("تم التسجيل بنجاح");
-        // Redirect أو أي شيء آخر
-      })
-      .catch((err) => console.error("حدث خطأ:", err));
   }
 };
 
@@ -106,22 +104,6 @@ const validateLoginForm = () => {
       email: emailVal,
       password: passwordVal,
     };
-
-    fetch("/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          alert("تم تسجيل الدخول");
-          window.location.href = data.redirect; // أو أي صفحة
-        } else {
-          alert("بيانات غير صحيحة");
-        }
-      })
-      .catch((err) => console.error("حدث خطأ:", err));
   }
 };
 
@@ -406,12 +388,13 @@ const cardNumber = document.querySelector(".card-number");
 const cardName = document.querySelector(".cardholder-name");
 
 // Format card number input
-cardNumber.addEventListener("input", (e) => {
-  let value = e.target.value.replace(/\D/g, "");
-  let formatted = value.match(/.{1,4}/g);
-  e.target.value = formatted ? formatted.join(" ") : "";
-});
-
+if (cardNumber) {
+  cardNumber.addEventListener("input", (e) => {
+    let value = e.target.value.replace(/\D/g, "");
+    let formatted = value.match(/.{1,4}/g);
+    e.target.value = formatted ? formatted.join(" ") : "";
+  });
+}
 const isValidCardholderName = (n) => {
   const regex = /^[A-Za-z\u0600-\u06FF\s]{2,}$/; // includes Arabic characters too
   return regex.test(n.trim());
