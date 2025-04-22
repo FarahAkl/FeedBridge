@@ -168,6 +168,13 @@ header {
     }
   }
 }
+@media (max-width:786px) {
+  header{
+    .dropdown{
+      top: 66px;
+    }
+  }
+}
 .footer {
   background-color: var(--main-color);
   color: #fff;
