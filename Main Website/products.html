@@ -34,10 +34,24 @@
       </ul>
       <div class="header-icons">
         <a href="cart.html">
-          <span class="material-symbols-outlined"> shopping_cart </span>
-        </a>
-        <span class="material-symbols-outlined"> account_circle </span>
-        <a href="login.html">تسجيل الدخول</a>
+          <span class="material-symbols-outlined"> shopping_cart </span> </a
+        ><span class="material-symbols-outlined dropdown-toggle"> account_circle </span>
+      </div>
+      <div class="dropdown">
+        <ul class="dropdown-menu">
+          <li>
+            <a href="profile.html">
+              <span class="material-symbols-outlined">person</span>
+              <span> الملف الشخصي</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="">
+              <span class="material-symbols-outlined">logout</span>
+              <span>تسجيل الخروج</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
     <section class="products-hero">
@@ -59,6 +73,7 @@
           <div class="product-card-text">
             <h2>اسم المنتج</h2>
             <p>الوصف</p>
+            <span class="exp-date" style="color: red;">تاريخ الانتهاء : </س>
             <span>07/03/2025</span>
             <button class="btn add-to-cart-btn">اضف الي السله</button>
           </div>

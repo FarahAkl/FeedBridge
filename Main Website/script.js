@@ -82,6 +82,9 @@ const validateRegisterForm = () => {
       city: cityVal,
       password: passwordVal,
     };
+    setTimeout(() => {
+      window.location = "index.html";
+    }, 1000);
   }
 };
 
@@ -104,6 +107,9 @@ const validateLoginForm = () => {
       email: emailVal,
       password: passwordVal,
     };
+    setTimeout(() => {
+      window.location = "index.html";
+    }, 1000);
   }
 };
 
