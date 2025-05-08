@@ -1,0 +1,23 @@
+{
+  "name": "feedbridge",
+  "version": "1.0.0",
+  "description": "The **Food Donation Platform** is designed to connect restaurants and charities in Egypt, aiming to reduce food waste and support those in need. This application streamlines the process of managing food donations, ensuring efficient and transparent communication between donors and recipients.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FarahAkl/FeedBridge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FarahAkl/FeedBridge/issues"
+  },
+  "homepage": "https://github.com/FarahAkl/FeedBridge#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
