@@ -1,13 +1,13 @@
-const isEmail = (email) => {
+export const isEmail = (email) => {
   return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 };
 
-const isValidCardholderName = (n) => {
+export const isValidCardholderName = (n) => {
   const regex = /^[A-Za-z\u0600-\u06FF\s]{2,}$/; // includes Arabic characters too
   return regex.test(n.trim());
 };
 
-const isValidCardNumber = (n) => {
+export const isValidCardNumber = (n) => {
   const sanitized = n.replace(/\s+/g, ""); // remove spaces
   const onlyDigits = /^\d+$/;
 
@@ -17,8 +17,8 @@ const isValidCardNumber = (n) => {
     sanitized.length <= 19
   );
 };
-module.exports = {
-  isEmail,
-  isValidCardholderName,
-  isValidCardNumber,
-};
+// module.exports = {
+//   isEmail,
+//   isValidCardholderName,
+//   isValidCardNumber,
+// };

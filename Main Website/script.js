@@ -1,3 +1,9 @@
+import {
+  isEmail,
+  isValidCardholderName,
+  isValidCardNumber,
+} from "./validators.js";
+
 const mobileMenu = document.querySelector(".mobile-icon");
 const pageItems = document.querySelector(".page-items");
 const registerForm = document.querySelector("#register-form");
