@@ -428,3 +428,9 @@ if (confirmBtn) {
     document.querySelector(".confirm-container").style.display = "flex";
   });
 }
+// Close the mobile menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!mobileMenu.contains(e.target) && !pageItems.contains(e.target)) {
+    pageItems.classList.remove("active");
+  }
+});
