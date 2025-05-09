@@ -3,11 +3,10 @@
 The **Food Donation Platform** is designed to connect restaurants and charities in Egypt, aiming to reduce food waste and support those in need. This application streamlines the process of managing food donations, ensuring efficient and transparent communication between donors and recipients.
 
 ## 💎Features
-- **Real-time Notifications:** Keep stakeholders informed.
-- **Make-order:** The needer can choose any thing he want from available products.
-- **Reports:** Admin send reports to donors.
-- **Track donations:** the donors can track the donations.
-- **Delivery:** Delivery is available
+- **Make Orders:** Needy users can place custom orders from available donated products.
+- **Add Donated Products:** Donors can add items they wish to donate to the system.
+- **Feedback System:** Users can submit feedback to help improve the service.
+- **Monetary Donations:** Donors can contribute by donating money directly.
 
 ## 🔧Technology Stack
 - **Frontend:** Vanilla JS
